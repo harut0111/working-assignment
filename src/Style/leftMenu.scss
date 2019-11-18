@@ -7,13 +7,9 @@
     overflow-x: auto;
     &-content {
         margin: 5px 10px;
-        // border: $testBorder;
         height: -webkit-fill-available;
         &-main {
-            // border: $testBorder;
             margin: 50px 0;
-            // height: 450px;
-
             ul {
                 margin: 20px 0;
                 border: $testBorder;
@@ -28,7 +24,7 @@
         text-align: center;
         // border: $testBorder;
         border-bottom: 1px solid silver;
-        height: 60px;
+        height: 50px;
         span {
             color: tomato;
         }
