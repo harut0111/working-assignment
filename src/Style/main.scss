@@ -61,5 +61,16 @@
 
     &-table {
         background-color: rgba(228, 228, 228, 0.897);
+
+        .MuiTableHead-root {
+            background: rgb(229, 229, 229);
+            .MuiTableCell-head {
+                border-right: $GRAY_BORDER;
+            }
+
+            span {
+                display: flex;
+            }
+        }
     }
 }
