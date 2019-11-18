@@ -1,6 +1,18 @@
 .App {
-    text-align: center;
-    border: 1px solid #000;
+    position: relative;
+    position: relative;
+    height: 100%;
+    display: flex;
+}
 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
   
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+}

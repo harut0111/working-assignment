@@ -1,4 +1,36 @@
-.left-menu {
-    border: 1px solid black;
-    width: 300px;
+.leftMenu {
+    position: relative;
+    width: 20%;
+    background: gray;
+    color: #fff;
+    height: 100%;
+    overflow-x: auto;
+    &-content {
+        margin: 5px 10px;
+        // border: $testBorder;
+        height: -webkit-fill-available;
+        &-main {
+            // border: $testBorder;
+            margin: 50px 0;
+            // height: 450px;
+
+            ul {
+                margin: 20px 0;
+                border: $testBorder;
+                li {
+                    margin: 10px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &-header {
+        text-align: center;
+        // border: $testBorder;
+        border-bottom: 1px solid silver;
+        height: 60px;
+        span {
+            color: tomato;
+        }
+    }
 }

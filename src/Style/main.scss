@@ -1,0 +1,23 @@
+.main {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+
+    &-content {
+        height: inherit;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        // border: $testBorder;
+        border-bottom: 1px solid gray;
+
+
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+    }
+}
