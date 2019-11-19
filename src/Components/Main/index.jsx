@@ -2,6 +2,10 @@ import React from 'react';
 import { FaBell, FaUserCircle } from 'react-icons/fa';
 import WorkDataTable from './_Table';
 import AddingWork from './_AddingWork';
+import DataFilter from './_DataFilter';
+// import Icon from '../../Core/Icon';
+
+
 
 const index = () => {
     return (
@@ -23,15 +27,7 @@ const index = () => {
                 <AddingWork />
 
                 {/* part 3 ---- data-filter */}
-                <div className='main-filter'>
-                    <div className='main-filter-content'>
-                        <div>div 1</div>
-                        <div>div 2</div>
-                        <div>div 3</div>
-                        <div>div 4</div>
-                        <div>div 5</div>
-                    </div>
-                </div>
+                <DataFilter />
 
                 {/* part 4 ---- table */}
                 <div className='main-table'>

@@ -33,15 +33,16 @@
             align-items: center;
             margin: 5px 10px;
             padding: 10px;
-            border: $testBorder;
+            // border: $testBorder;
             height: 50px;
+            font-size: 15px;
             
             > div {
                 // border: $GRAY_BORDER;
                 margin: 0 10px;
                 display: flex;
                 align-items: center;
-                height: 30px;
+                height: 40px;
             }
 
             > div:nth-child(1) {
@@ -49,7 +50,7 @@
                 flex-grow: 0.1;
                 background-color: rgb(220, 218, 217);
                 // border: $testBorder;
-                
+
             }
 
             > div:nth-child(2) {
@@ -87,7 +88,7 @@
                 line-height: 12px;
                 border-radius: 15px;
                 font-weight: 800;
-
+                height: 40px;
                 &:hover {
                     background: red;
                 }
@@ -95,20 +96,44 @@
         }
     }
 
-    // part 3 --- adding work ---
+    // part 2 --- filter ---
     &-filter {
         &-content {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: 5px 10px;
             padding: 10px;
-            border: $testBorder;
+            // border: $testBorder;
             height: 50px;
             
-            div {
+            > div {
                 border: $GRAY_BORDER;
                 border-radius: 5px;
-                width: 100px; // ---> temp
+                margin: 0 10px;
+                display: flex;
+                align-items: center;
+                height: 35px;
+                // align-items: center;
+            }
+
+            > div:nth-child(1) {
+                // width: 100px;
+                flex-grow: 1;
+               
+            }
+
+            > div:nth-child(2) {
+                flex-grow: 1;
+            }
+            > div:nth-child(3) {
+                flex-grow: 1;
+            }
+            > div:nth-child(4) {
+                flex-grow: 1;
+            }
+            > div:nth-child(5) {
+                flex-grow: 1;
             }
         }
     }

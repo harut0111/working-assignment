@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const Icon = props => {
     
-    const {color, text, className, size, backgroundColor} = props;
+    const {color, text, className, size, backgroundColor, fontSize} = props;
 
     const containerStyle = {
         display: 'flex',
@@ -20,7 +20,8 @@ const Icon = props => {
 
     const spanStyle = {
         // marginLeft: '10px',
-        color: '#000'
+        color: '#000',
+        fontSize: fontSize
     }
 
 
@@ -36,7 +37,8 @@ Icon.propTypes = {
     color: PropTypes.string,
     text: PropTypes.string,
     size: PropTypes.string,
-    children: PropTypes.object
+    children: PropTypes.object,
+    fontSize: PropTypes.string
 }
 
 export default Icon;
