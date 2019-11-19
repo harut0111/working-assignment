@@ -1,11 +1,13 @@
 .leftMenu {
     position: relative;
+    z-index: 1;
     width: 20%;
     background: rgb(79, 79, 79);
     color: #fff;
     height: 100%;
     overflow-x: auto;
     min-width: 220px;
+    max-width: 230px;
     &-content {
         margin: 5px 10px;
         height: -webkit-fill-available;
@@ -52,7 +54,6 @@
         align-items: center;
         text-align: center;
         top: 100px;
-        // border: $testBorder;
         height: 70px;
         > div {
             color: orange;
