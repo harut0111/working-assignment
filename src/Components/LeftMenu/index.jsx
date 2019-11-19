@@ -16,7 +16,7 @@ const LeftMenu = () => {
             <div className='leftMenu-content'>
                 <div className='leftMenu-header'>
                     <div style={{margin: "0 5px"}}><AiTwotoneSetting size="30px" color="orange"/></div>
-                    <div>Цифровая платформа <span>i4.0</span> </div>
+                    <div>Цифровая платформа <span style={{color: 'orange'}}>i4.0</span> </div>
                 </div>
                 <div className='leftMenu-content-main'>
                     <nav>
@@ -45,11 +45,11 @@ const LeftMenu = () => {
                     </nav>
                     <div className='leftMenu-footer'>
                         <div>
-                            <div><FiSettings size="20px" /></div>
+                            <div><FiSettings size="30px" /></div>
                             <span>Настройки</span>
                         </div>
                         <div>
-                            <div><TiContacts size="20px" /></div>
+                            <div><TiContacts size="30px" /></div>
                             <span>Контакты</span>
                         </div>
                     </div>
