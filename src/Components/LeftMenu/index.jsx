@@ -45,11 +45,11 @@ const LeftMenu = () => {
                     </nav>
                     <div className='leftMenu-footer'>
                         <div>
-                            <div><FiSettings /></div>
+                            <div><FiSettings size="20px" /></div>
                             <span>Настройки</span>
                         </div>
                         <div>
-                            <div><TiContacts /></div>
+                            <div><TiContacts size="20px" /></div>
                             <span>Контакты</span>
                         </div>
                     </div>
