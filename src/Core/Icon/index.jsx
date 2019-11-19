@@ -4,12 +4,13 @@ import PropTypes from 'prop-types'
 
 const Icon = props => {
     
-    const {color, text, className, size} = props;
+    const {color, text, className, size, backgroundColor} = props;
 
     const containerStyle = {
         display: 'flex',
         alignItems: 'center',
         color: color,
+        backgroundColor: backgroundColor
     }
 
     const iconStyle = {
@@ -18,7 +19,7 @@ const Icon = props => {
     }
 
     const spanStyle = {
-        marginLeft: '10px',
+        // marginLeft: '10px',
         color: '#000'
     }
 

@@ -29,14 +29,68 @@
         border-bottom: $GRAY_BORDER;
         &-content {
             display: flex;
-            justify-content: space-between;
+            // justify-content: space-between;
+            align-items: center;
             margin: 5px 10px;
             padding: 10px;
             border: $testBorder;
             height: 50px;
             
-            div {
-                border: $GRAY_BORDER;
+            > div {
+                // border: $GRAY_BORDER;
+                margin: 0 10px;
+                display: flex;
+                align-items: center;
+                height: 30px;
+            }
+
+            > div:nth-child(1) {
+                height: 27px;
+                flex-grow: 0.1;
+                background-color: rgb(220, 218, 217);
+                // border: $testBorder;
+                
+            }
+
+            > div:nth-child(2) {
+                flex-grow: 2;
+                border: 1px solid gray;
+                border-radius: 10px;
+                
+            }
+
+            > div:nth-child(3) {
+                flex-grow: 3;
+                font-size: smaller;
+                color: gray;
+                // border: $testBorder;
+                justify-content: center;
+            }
+
+            > div:nth-child(4) {
+                flex-grow: 0.01;
+                // border: $testBorder;
+            }
+
+            .searchBar {
+               input {
+                   border: none;
+                   outline: none;
+                   line-height: 20px;
+               }
+            }
+
+            .addingWorkBtn {
+                background: red;
+                width: 150px;
+                font-size: 9px;
+                line-height: 12px;
+                border-radius: 15px;
+                font-weight: 800;
+
+                &:hover {
+                    background: red;
+                }
             }
         }
     }
@@ -70,6 +124,27 @@
 
             span {
                 display: flex;
+            }
+        }
+
+
+        // -----table buttons' style-----
+        .higherBtn {
+            background: red;
+            &:hover {
+                background: red;
+            }
+        }
+        .averageBtn {
+            background: orange;
+            &:hover {
+                background: orange;
+            }
+        }
+        .lowBtn {
+            background: #cccc00;
+            &:hover {
+                background: #cccc00;
             }
         }
     }
