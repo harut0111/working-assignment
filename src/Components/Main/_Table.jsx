@@ -30,8 +30,8 @@ function createData(name, calories, fat, carbs, protein, teamNumber, taskNumber)
 //<span style={{color: 'rgb(234, 170, 96)', marginRight: '10px'}} SettingsOutlinedIcon
 const rows = [
   createData('Frozen yoghurt', 159, <GreenCheckbox label='Выполнено' />, 24, <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
-  createData('Ice cream sandwich', 237, <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px'>{SettingsOutlinedIcon}</Icon>, 37, <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
-  createData('Eclair', 262, <Icon color="red" text='в Работе' size="30px">{AlarmIcon}</Icon>, 24, <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 2"),
+  createData('Ice cream sandwich', 237, <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px' iconMargin="0 5px 0 -5px">{SettingsOutlinedIcon}</Icon>, 37, <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
+  createData('Eclair', 262, <Icon color="red" text='в Работе' size="30px" iconMargin="0 5px 0 -5px">{AlarmIcon}</Icon>, 24, <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 2"),
   createData('Cupcake', 305, <GreenCheckbox label='Выполнено' />, 67, <CustomButton className="averageBtn" >Средний</CustomButton>, "Бригада Номер 2", "Задания Номер 1"),
   createData('Gingerbread', 356, <GreenCheckbox label='Выполнено' />, 49, <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
 ];

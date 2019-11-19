@@ -42,11 +42,11 @@
                 margin: 0 10px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 height: 40px;
             }
 
             > div:nth-child(1) {
-                height: 27px;
                 flex-grow: 0.1;
                 background-color: rgb(220, 218, 217);
                 // border: $testBorder;
@@ -54,18 +54,17 @@
             }
 
             > div:nth-child(2) {
-                flex-grow: 2;
+                flex-grow: 1;
                 border: 1px solid gray;
                 border-radius: 10px;
-                
             }
 
             > div:nth-child(3) {
                 flex-grow: 3;
                 font-size: smaller;
                 color: gray;
-                // border: $testBorder;
-                justify-content: center;
+                font-size: 15px;
+               
             }
 
             > div:nth-child(4) {
@@ -74,10 +73,16 @@
             }
 
             .searchBar {
-               input {
+            
+                background-color:rgb(220, 218, 217);
+                input {
+                   background-color:  rgb(220, 218, 217);; 
                    border: none;
                    outline: none;
                    line-height: 20px;
+                   font-size: 20px;
+                   width: 90%;
+                   padding: 6px 0;
                }
             }
 

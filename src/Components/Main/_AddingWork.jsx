@@ -12,9 +12,9 @@ const _AddingWork = () => {
         <div className='main-addingWork'>
             <div className='main-addingWork-content'>
                 <div>
-                    <Icon backgroundColor='blue' color='#fff'>{FormatListBulletedIcon}</Icon>
-                    <Icon color='#fff'>{AccountTreeIcon}</Icon>
-                    <Icon color='#fff'>{DateRangeIcon}</Icon>
+                    <Icon backgroundColor='blue' color='#fff' size='37px' >{FormatListBulletedIcon}</Icon>
+                    <Icon color='#fff'  size='37px' >{AccountTreeIcon}</Icon>
+                    <Icon color='#fff'  size='37px' >{DateRangeIcon}</Icon>
                 </div>
                 <div className='searchBar'><Icon>{SearchIcon}</Icon><input placeholder='Поиск...' type='text'/></div>
                 <div>найдены 5 рабочий задание</div>
