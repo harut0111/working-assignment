@@ -7,6 +7,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const CustomCheckbox = withStyles({
   root: {
+    fontSize: "30px",
     color: green[400],
     '&$checked': {
       color: green[600],
@@ -29,6 +30,7 @@ export default function CheckboxLabels(props) {
                 value="checkedG"
             />
             }
+            fontSize="12px"
             label={props.label}
         />
     </FormGroup>

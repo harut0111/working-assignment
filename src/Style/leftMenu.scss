@@ -1,10 +1,11 @@
 .leftMenu {
     position: relative;
     width: 20%;
-    background: gray;
+    background: rgb(79, 79, 79);
     color: #fff;
     height: 100%;
     overflow-x: auto;
+    min-width: 220px;
     &-content {
         margin: 5px 10px;
         height: -webkit-fill-available;
@@ -12,19 +13,30 @@
             margin: 50px 0;
             ul {
                 margin: 20px 0;
-                border: $testBorder;
+                // border: $testBorder;
                 li {
+                    display: flex;
+                    align-items: center;
                     margin: 10px 0;
                     text-align: center;
+                    cursor: pointer;
+
+                    .menuIcon {
+                        margin: 0 3px;
+                    }
                 }
             }
         }
     }
     &-header {
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         // border: $testBorder;
         border-bottom: 1px solid silver;
-        height: 50px;
+        height: 60px;
+        font-size: 1.3rem;
+        font-weight: 900;
         span {
             color: tomato;
         }

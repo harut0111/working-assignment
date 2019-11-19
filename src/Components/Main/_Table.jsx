@@ -29,11 +29,11 @@ function createData(name, calories, fat, carbs, protein, teamNumber, taskNumber)
 }
 //<span style={{color: 'rgb(234, 170, 96)', marginRight: '10px'}} SettingsOutlinedIcon
 const rows = [
-  createData('Frozen yoghurt', 159, <GreenCheckbox label='Выполнено' />, 24, <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
-  createData('Ice cream sandwich', 237, <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px' iconMargin="0 5px 0 -5px">{SettingsOutlinedIcon}</Icon>, 37, <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
-  createData('Eclair', 262, <Icon color="red" text='в Работе' size="30px" iconMargin="0 5px 0 -5px">{AlarmIcon}</Icon>, 24, <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 2"),
-  createData('Cupcake', 305, <GreenCheckbox label='Выполнено' />, 67, <CustomButton className="averageBtn" >Средний</CustomButton>, "Бригада Номер 2", "Задания Номер 1"),
-  createData('Gingerbread', 356, <GreenCheckbox label='Выполнено' />, 49, <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
+  createData('05.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Вибрация мотор", <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
+  createData('06.10.2019', "00006", <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px' iconMargin="0 5px 0 -5px">{SettingsOutlinedIcon}</Icon>, "Течь трубы в задании - устранить", <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
+  createData('07.10.2019', "00005", <Icon color="red" text='Просрочено' size="30px" iconMargin="0 5px 0 -5px">{AlarmIcon}</Icon>, "Течь трубы в задании - устранить", <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 2"),
+  createData('08.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Течь трубы в задании - устранить", <CustomButton className="averageBtn" >Средний</CustomButton>, "Бригада Номер 2", "Задания Номер 1"),
+  createData('09.10.2019', "00012", <GreenCheckbox label='Выполнено' />, "Течь трубы в задании - устранить", <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
 ];
 
 export default function SimpleTable() {
