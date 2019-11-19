@@ -1,8 +1,11 @@
 import React from 'react';
-import { FaClipboardList, FaRegChartBar } from 'react-icons/fa';
-import { AiTwotoneSetting } from "react-icons/ai";
-import { GoChecklist, GoBug } from "react-icons/go";
+import { FaRegChartBar, FaToolbox, FaTruckMoving, FaUser } from 'react-icons/fa';
+import { AiTwotoneSetting, AiTwotoneHome, AiTwotoneTool } from "react-icons/ai";
+import { GoChecklist, GoBug, GoFileDirectory } from "react-icons/go";
 import { FiPhoneCall } from "react-icons/fi";
+import { MdEqualizer } from "react-icons/md";
+import { IoMdSpeedometer } from "react-icons/io";
+import { TiDocumentText } from "react-icons/ti";
 
 
 
@@ -24,23 +27,22 @@ const LeftMenu = () => {
                             <li><span className='menuIcon'><FaRegChartBar size="25px"/></span><span>Отчеты и показатели</span></li>
                         </ul>
                         <ul>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                        </ul>
-                        <ul>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                        </ul>
-                        <ul>
-                            <li><FaClipboardList />Рабочие задания</li>
-                            <li><FaClipboardList />Рабочие задания</li>
-                        </ul>
+                            <li><span className='menuIcon'><AiTwotoneHome size="25px"/></span><span>Объекты</span></li>
+                            <li><span className='menuIcon'><MdEqualizer size="27px"/></span><span>Оборудование</span></li>
+                            <li><span className='menuIcon'><FaToolbox size="22px"/></span><span>Запчасти и МТР</span></li>
+                            <li><span className='menuIcon'><IoMdSpeedometer size="27px"/></span><span>Счетчики</span></li>
+                            <li><span className='menuIcon'><FaTruckMoving size="27px"/></span><span>Заявка на Закупки</span></li>
 
+                        </ul>
+                        <ul>
+                            <li><span className='menuIcon'><FaUser size="25px"/></span><span>Бригады</span></li>
+                            <li><span className='menuIcon'><AiTwotoneTool size="25px"/></span><span>Контрагенты</span></li>
+                        </ul>
+                        <ul>
+                            <li><span className='menuIcon'><TiDocumentText size="25px"/></span><span>Документы</span></li>
+                            <li><span className='menuIcon'><GoFileDirectory size="25px"/></span><span>Справочники</span></li>
+                        </ul>
                     </nav>
-
                 </div>
             </div>
         </div>

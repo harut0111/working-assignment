@@ -13,7 +13,6 @@
             margin: 50px 0;
             ul {
                 margin: 20px 0;
-                // border: $testBorder;
                 li {
                     display: flex;
                     align-items: center;
@@ -21,8 +20,12 @@
                     text-align: center;
                     cursor: pointer;
 
+                    &:hover {
+                        background: gray;
+                    }
+
                     .menuIcon {
-                        margin: 0 3px;
+                        margin: 0 10px 0 3px;
                     }
                 }
             }
