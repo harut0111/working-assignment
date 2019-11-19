@@ -2,10 +2,10 @@ import React from 'react';
 import { FaRegChartBar, FaToolbox, FaTruckMoving, FaUser } from 'react-icons/fa';
 import { AiTwotoneSetting, AiTwotoneHome, AiTwotoneTool } from "react-icons/ai";
 import { GoChecklist, GoBug, GoFileDirectory } from "react-icons/go";
-import { FiPhoneCall } from "react-icons/fi";
+import { FiPhoneCall, FiSettings } from "react-icons/fi";
 import { MdEqualizer } from "react-icons/md";
 import { IoMdSpeedometer } from "react-icons/io";
-import { TiDocumentText } from "react-icons/ti";
+import { TiDocumentText, TiContacts } from "react-icons/ti";
 
 
 
@@ -43,6 +43,16 @@ const LeftMenu = () => {
                             <li><span className='menuIcon'><GoFileDirectory size="25px"/></span><span>Справочники</span></li>
                         </ul>
                     </nav>
+                    <div className='leftMenu-footer'>
+                        <div>
+                            <div><FiSettings /></div>
+                            <span>Настройки</span>
+                        </div>
+                        <div>
+                            <div><TiContacts /></div>
+                            <span>Контакты</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

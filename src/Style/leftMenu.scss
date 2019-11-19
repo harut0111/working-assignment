@@ -12,11 +12,11 @@
         &-main {
             margin: 50px 0;
             ul {
-                margin: 20px 0;
+                margin: 40px 0;
                 li {
                     display: flex;
                     align-items: center;
-                    margin: 10px 0;
+                    margin: 5px 0;
                     text-align: center;
                     cursor: pointer;
 
@@ -42,6 +42,27 @@
         font-weight: 900;
         span {
             color: tomato;
+        }
+    }
+
+    &-footer {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        bottom: 0;
+        // border: $testBorder;
+        height: 70px;
+        >div {
+            color: orange;
+            margin: 0 5px;
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.3);
+            }
         }
     }
 }
