@@ -43,6 +43,7 @@ const LeftMenu = () => {
                             <li><span className='menuIcon'><GoFileDirectory size="25px"/></span><span>Справочники</span></li>
                         </ul>
                     </nav>
+
                     <div className='leftMenu-footer'>
                         <div>
                             <div><FiSettings size="30px" /></div>

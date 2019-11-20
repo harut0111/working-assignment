@@ -7,15 +7,35 @@
     // part 1 --- content ----
     &-content {
         height: inherit;
+        min-width: 1000px;
     }
 
     // part 2 --- header ----
     &-header {
-
         display: flex;
         height: 50px;
         justify-content: space-between;
-        padding: 10px 30px;
+        align-items: center;
+        padding: 0 30px;
+
+        &-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            span {
+                display: flex;
+                padding: 5px;
+                margin: 0 5px;
+                font-size: 30px;
+                cursor: pointer;
+                color: gray;
+
+                &:hover {
+                    color: rgb(100, 100, 100);
+                }
+            }
+        }
 
         h1 {
             font-size: 22px;
@@ -29,11 +49,9 @@
         border-bottom: $GRAY_BORDER;
         &-content {
             display: flex;
-            // justify-content: space-between;
             align-items: center;
             margin: 5px 10px;
             padding: 10px;
-            // border: $testBorder;
             height: 50px;
             font-size: 15px;
             
@@ -49,8 +67,6 @@
             > div:nth-child(1) {
                 flex-grow: 0.1;
                 background-color: rgb(220, 218, 217);
-                // border: $testBorder;
-
             }
 
             > div:nth-child(2) {
@@ -69,7 +85,6 @@
 
             > div:nth-child(4) {
                 flex-grow: 0.01;
-                // border: $testBorder;
             }
 
             .searchBar {
@@ -107,27 +122,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            justify-content: stretch;
             margin: 5px 10px;
-            padding: 10px;
-            // border: $testBorder;
             height: 50px;
             
             > div {
                 border: $GRAY_BORDER;
                 border-radius: 5px;
                 margin: 0 10px;
+                padding: 5px;
                 display: flex;
                 align-items: center;
-                height: 35px;
-                // align-items: center;
+                height: 45px;
+                line-height: 15px;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(230, 230, 230);
+                } 
             }
 
             > div:nth-child(1) {
-                // width: 100px;
                 flex-grow: 1;
-               
             }
-
             > div:nth-child(2) {
                 flex-grow: 1;
             }
@@ -138,6 +154,10 @@
                 flex-grow: 1;
             }
             > div:nth-child(5) {
+                flex-grow: 2;
+                border-color: rgb(55, 132, 242);
+            }
+            > div:nth-child(6) {
                 flex-grow: 1;
             }
         }

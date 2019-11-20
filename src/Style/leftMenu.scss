@@ -1,13 +1,29 @@
 .leftMenu {
     position: relative;
     z-index: 1;
-    width: 20%;
+    width: 250px;
+    min-width: 250px;
     background: rgb(79, 79, 79);
     color: #fff;
     height: 100%;
     overflow-x: auto;
-    min-width: 220px;
-    max-width: 230px;
+
+    &::-webkit-scrollbar {
+        width: 0.4em;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+      border-radius: 10px;
+
+      &:hover {
+          background-color: gray;
+      }
+    }
+
+
+
     &-content {
         margin: 5px 10px;
         height: -webkit-fill-available;
@@ -50,7 +66,7 @@
     &-footer {
         position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         text-align: center;
         top: 100px;

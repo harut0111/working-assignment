@@ -20,8 +20,7 @@ const Icon = props => {
     }
 
     const spanStyle = {
-        // marginLeft: '10px',
-        color: '#000',
+        color: 'inherit',
         fontSize: fontSize
     }
 
@@ -38,7 +37,7 @@ Icon.propTypes = {
     color: PropTypes.string,
     text: PropTypes.string,
     size: PropTypes.string,
-    children: PropTypes.object,
+    // children: PropTypes.object,
     fontSize: PropTypes.string,
     iconMargin: PropTypes.string,
 }
