@@ -40,6 +40,7 @@ const index = () => {
             <div className='editWork-title'>
                 <h2>Течь трубы в задани - устранить</h2>
             </div>
+            
             {/* part 5 */}
             <div className='editWork-state'>
                 <div><span>Выполнено</span><span><MdKeyboardArrowDown size="22px"/></span></div>

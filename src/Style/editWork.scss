@@ -3,7 +3,6 @@
     flex-direction: column;
     // border: $testBorder;
     width: 400px;
-    // height: 500px;
     color: gray;
 
     // part 1 
@@ -104,10 +103,10 @@
             color: rgb(55, 132, 242);
             border-color: rgb(55, 132, 242);
 
-           span:first-child {
-            margin: 4px 5px 0 0;
-            font-size: 22px;;
-       }
+            span:first-child {
+               margin: 4px 5px 0 0;
+               font-size: 22px;;
+            }
         }
     }
 
