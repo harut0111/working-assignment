@@ -1,12 +1,14 @@
 import React from 'react';
 import { FiLink } from 'react-icons/fi'
 import { AiFillRightSquare } from 'react-icons/ai'
-import { MdKeyboardArrowDown, MdAlarm } from 'react-icons/md';
+import { MdAlarm } from 'react-icons/md';
 import { IoIosBookmark, IoMdClose } from 'react-icons/io';
 import { GoPencil } from 'react-icons/go';
 import { TiArrowUnsorted } from 'react-icons/ti';
+import SimpleMenu from '../../Core/DropDown';
 
 const index = () => {
+    
     return (
         <div className='editWork'>
 
@@ -26,7 +28,7 @@ const index = () => {
 
             {/* part 2 */}
             <div className='editWork-image'>
-                <span>Image</span>
+                <img  src="./Picture1.png" alt="Picture"/>
             </div>
 
             {/* part 3 */}
@@ -43,7 +45,9 @@ const index = () => {
             
             {/* part 5 */}
             <div className='editWork-state'>
-                <div><span>Выполнено</span><span><MdKeyboardArrowDown size="22px"/></span></div>
+                {/* <div><span>Выполнено</span><span><MdKeyboardArrowDown size="22px"/></span></div> */}
+                {/* <div></div> */}
+                <SimpleMenu />
                 <div><span><MdAlarm /></span><span>Время 1ч  35м</span></div>
             </div>
 
