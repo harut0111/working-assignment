@@ -6,9 +6,10 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
 // import GreenCheckbox from '../../Core/GreenCheckbox'
-// import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-// import AlarmIcon from '@material-ui/icons/Alarm';
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
+import AlarmIcon from '@material-ui/icons/Alarm';
 
 // import Icon from '../../Core/Icon';
 // import CustomButton from '../../Core/Button';
@@ -17,6 +18,8 @@ import Paper from '@material-ui/core/Paper';
 import { useStateValue } from '../../State/index'
 import { FaRegEdit } from 'react-icons/fa';
 import { AiOutlineDelete } from 'react-icons/ai';
+import Icon  from '../../Core/Icon';
+import { TODO_TYPES } from '../../configs/constants';
 
 const useStyles = makeStyles({
   root: {
@@ -61,13 +64,24 @@ export default function SimpleTable() {
   const handleOnDelete = (e) => {
     e.stopPropagation();
     const filteredItem = workList.filter((item, index) => index !== activeRowIndex)
+    // console.log(filteredItem)
     dispatchWorkList({type: 'deleteWork',  payload: filteredItem})
   }
   
   const handleOnEdit = (e) => {
     e.stopPropagation();
     dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: true})
-    // console.log('activeRowIndex', activeRowIndex);
+  }
+
+  const renderTodoIcon = (type) => {
+    let configs = {}
+    switch(type){
+      case TODO_TYPES.DONE : configs = { color: "#43a047", text: 'Выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <CheckBoxIcon/>}; break;
+      case TODO_TYPES.IN_PROGRESS : configs = { color: "rgb(234, 170, 96)", text: 'В Работе',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <SettingsOutlinedIcon />}; break;
+      case TODO_TYPES.NOT_FINISHED : configs = { color: "red", text: 'Не выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <AlarmIcon />}; break;
+      default : configs = {}
+    }
+    return <Icon {...configs}/>
   }
 
   return (
@@ -89,7 +103,7 @@ export default function SimpleTable() {
             <TableRow key={index} id={index} onClick={handleOnClick} style={{boxShadow: activeRowIndex === index ? '0 0 10px silver' : 'none'}}>
               <TableCell component="th" scope="row" className={classes.bodyCell}>{row.name}</TableCell>
               <TableCell align="left">{row.calories}</TableCell>
-              <TableCell align="left">{row.fat}</TableCell>
+              <TableCell align="left">{renderTodoIcon(row.type)}</TableCell>
               <TableCell align="left">{row.carbs}</TableCell>
               <TableCell align="left">{row.protein}</TableCell>
               <TableCell align="left">{row.teamNumber}</TableCell>

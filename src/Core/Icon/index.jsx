@@ -3,6 +3,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Icon = props => {
+
+    // console.log(props)
     
     const {color, text, className, size, backgroundColor, fontSize, iconMargin} = props;
 

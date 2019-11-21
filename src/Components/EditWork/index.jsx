@@ -47,7 +47,7 @@ const index = () => {
             
             {/* part 5 */}
             <div className='editWork-state'>
-                <SimpleMenu list={["Выполнено", "В работе", "Не выполнено"]}/>
+                <SimpleMenu/>
                 <div><span><MdAlarm /></span><span>Время 1ч  35м</span></div>
             </div>
 

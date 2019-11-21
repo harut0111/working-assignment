@@ -3,17 +3,16 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useStateValue } from '../../State/index';
+import { TODO_TYPES } from '../../configs/constants';
 
 
-export default function SimpleMenu(props) {
+export default function SimpleMenu() {
 
   
     
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [index, setIndex] = React.useState(0);
+  // const [index, setIndex] = React.useState(0);
   
-
-  console.log('anchorEl', props.list[index]);
 
   const [{ workList }, dispatchWorkList ] = useStateValue();
   // eslint-disable-next-line no-unused-vars
@@ -24,24 +23,30 @@ export default function SimpleMenu(props) {
     setAnchorEl(event.currentTarget);
   };
 
-  
-
-  const handleClose = (index) => {
+  const handleClose = (type) => {
     setAnchorEl(null);
-    if(typeof(index) === 'number') setIndex(index);
-    // dispatchWorkList({type: 'updateWorkData', payload: Object.assign({}, workList {
-      
-    // })})
+    console.log(type)
+
+
+    const changedWorkList = workList.map((item, index) => {
+        if(index === activeRowIndex) {
+          item.type = type
+        }
+        return item
+    });
+
+    dispatchWorkList({type: 'updateWorkData', payload: changedWorkList})
+
   };
 
-  const list = props.list ? props.list: [];
+  // const list = props.list ? props.list: [];
 
   const activeIndex = activeRowIndex || 0;
 
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        {workList[activeIndex].fat.props.text || null}
+        { workList[activeIndex] && workList[activeIndex].type}
       </Button>
       <Menu
         id="simple-menu"
@@ -50,8 +55,8 @@ export default function SimpleMenu(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {list.map((item, index) => (
-          <MenuItem key={index} onClick={() => handleClose(index)}>{item}</MenuItem>
+        {Object.keys(TODO_TYPES).map((key, index) => (
+          <MenuItem key={index} onClick={() => handleClose(TODO_TYPES[key])}>{TODO_TYPES[key]}</MenuItem>
         ))}
       </Menu>
     </div>

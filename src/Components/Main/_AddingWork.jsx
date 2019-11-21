@@ -6,25 +6,20 @@ import Icon from '../../Core/Icon';
 import CustomBtn from '../../Core/Button';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { FaSitemap } from 'react-icons/fa';
-// import { MdDeleteForever } from 'react-icons/md';
 import { useStateValue } from '../../State/index';
-
-import GreenCheckbox from '../../Core/GreenCheckbox'
 import CustomButton from '../../Core/Button';
+
+import { TODO_TYPES } from '../../configs/constants';
 
 
 const _AddingWork = () => {
 
-
     // eslint-disable-next-line no-unused-vars
     const [{ workList }, dispatchWorkList] = useStateValue();
-    // console.log('workList', workList);
 
-    const initialWorkState = ['05.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Вибрация мотор", <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", `Задания Номер`, ];
+    const initialWorkState = ['06.10.2019', "00006",  TODO_TYPES.NOT_FINISHED, "Течь трубы в задании - устранить", <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"];
+    const handleOnClick = () =>  dispatchWorkList({type: 'addWork', payload: initialWorkState});
 
-    const handleOnClick = () => {
-        dispatchWorkList({type: 'addWork', payload: initialWorkState})
-    }
     return (
         <div className='main-addingWork'>
             <div className='main-addingWork-content'>
