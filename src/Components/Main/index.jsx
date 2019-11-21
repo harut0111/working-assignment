@@ -4,24 +4,15 @@ import AddingWork from './_AddingWork';
 import DataFilter from './_DataFilter';
 import DataTable from './_DataTable';
 import Drawer from '@material-ui/core/Drawer';
-
 import EditWork from '../EditWork'
 import Tasks from '../Tasks';
-
-import { useStateValue } from '../../State/index';
-
-
-
+import { useStateValue } from '../../Context';
+import { TOGGLE_DRAWER_DISPLAY } from '../../Context/reducer';
 
 const Main = () => {
 
-    // const [display, setDisplay] = React.useState(false);
-
     const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
-
-
-
-    const handleOnClose = () => dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: false});
+    const handleOnClose = () => dispatchDisplayDrawer({type: TOGGLE_DRAWER_DISPLAY, payload: false});
 
     return (
         <div className='main'>

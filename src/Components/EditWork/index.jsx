@@ -5,10 +5,17 @@ import { MdAlarm } from 'react-icons/md';
 import { IoIosBookmark, IoMdClose } from 'react-icons/io';
 import { GoPencil } from 'react-icons/go';
 import { TiArrowUnsorted } from 'react-icons/ti';
-import SimpleMenu from '../../Core/DropDown';
+import DropDown from '../../Core/DropDown';
+import { useStateValue } from '../../Context';
+import { TOGGLE_DRAWER_DISPLAY } from '../../Context/reducer';
 
 
-const index = () => {
+
+
+const EditWork = () => {
+
+    // eslint-disable-next-line no-unused-vars
+    const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
     
     return (
         <div className='editWork'>
@@ -23,7 +30,7 @@ const index = () => {
                     <IoIosBookmark />
                     <GoPencil />
                     <TiArrowUnsorted />
-                    <IoMdClose />
+                    <IoMdClose onClick={() => dispatchDisplayDrawer({type: TOGGLE_DRAWER_DISPLAY, payload: false})}/>
                 </div>
             </div>
 
@@ -47,7 +54,7 @@ const index = () => {
             
             {/* part 5 */}
             <div className='editWork-state'>
-                <SimpleMenu/>
+                <DropDown />
                 <div><span><MdAlarm /></span><span>Время 1ч  35м</span></div>
             </div>
 
@@ -70,4 +77,4 @@ const index = () => {
     )
 }
 
-export default index
+export default EditWork

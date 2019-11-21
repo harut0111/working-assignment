@@ -6,10 +6,11 @@ import Icon from '../../Core/Icon';
 import CustomBtn from '../../Core/Button';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import { FaSitemap } from 'react-icons/fa';
-import { useStateValue } from '../../State/index';
+import { useStateValue } from '../../Context';
 import CustomButton from '../../Core/Button';
 
-import { TODO_TYPES } from '../../configs/constants';
+import { TODO_TYPES } from '../../Configs/constants';
+import { ADD_WORK } from '../../Context/reducer';
 
 
 const _AddingWork = () => {
@@ -18,7 +19,7 @@ const _AddingWork = () => {
     const [{ workList }, dispatchWorkList] = useStateValue();
 
     const initialWorkState = ['06.10.2019', "00006",  TODO_TYPES.NOT_FINISHED, "Течь трубы в задании - устранить", <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"];
-    const handleOnClick = () =>  dispatchWorkList({type: 'addWork', payload: initialWorkState});
+    const handleOnClick = () =>  dispatchWorkList({type: ADD_WORK, payload: initialWorkState});
 
     return (
         <div className='main-addingWork'>

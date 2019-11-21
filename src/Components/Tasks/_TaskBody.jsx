@@ -2,7 +2,7 @@ import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
 
-const _TasksBody = (props) => {
+const _TaskBody = (props) => {
 
     const { title } = props;
 
@@ -24,4 +24,4 @@ const _TasksBody = (props) => {
     )
 }
 
-export default _TasksBody
+export default _TaskBody

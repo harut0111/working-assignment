@@ -2,14 +2,14 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { useStateValue } from '../../State/index';
-import { TODO_TYPES } from '../../configs/constants';
+import { useStateValue } from '../../Context/index';
+import { TODO_TYPES } from '../../Configs/constants';
+import {getButtonColorForTodo} from "../../Configs/helper";
+import { UPDATE_WORK } from '../../Context/reducer';
 
 
-export default function SimpleMenu() {
+export default function DropDownDropDown() {
 
-  
-    
   const [anchorEl, setAnchorEl] = React.useState(null);
   // const [index, setIndex] = React.useState(0);
   
@@ -24,9 +24,8 @@ export default function SimpleMenu() {
   };
 
   const handleClose = (type) => {
+    
     setAnchorEl(null);
-    console.log(type)
-
 
     const changedWorkList = workList.map((item, index) => {
         if(index === activeRowIndex) {
@@ -35,16 +34,14 @@ export default function SimpleMenu() {
         return item
     });
 
-    dispatchWorkList({type: 'updateWorkData', payload: changedWorkList})
+    dispatchWorkList({type: UPDATE_WORK, payload: changedWorkList})
 
   };
-
-  // const list = props.list ? props.list: [];
 
   const activeIndex = activeRowIndex || 0;
 
   return (
-    <div>
+    <div style={{backgroundColor: getButtonColorForTodo(workList[activeIndex].type)}}>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         { workList[activeIndex] && workList[activeIndex].type}
       </Button>

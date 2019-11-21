@@ -7,19 +7,15 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
-// import GreenCheckbox from '../../Core/GreenCheckbox'
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import AlarmIcon from '@material-ui/icons/Alarm';
-
-// import Icon from '../../Core/Icon';
-// import CustomButton from '../../Core/Button';
-
-// import Button from '@material-ui/core/Button';
-import { useStateValue } from '../../State/index'
+import { useStateValue } from '../../Context/index'
 import { FaRegEdit } from 'react-icons/fa';
 import { AiOutlineDelete } from 'react-icons/ai';
 import Icon  from '../../Core/Icon';
-import { TODO_TYPES } from '../../configs/constants';
+import { TODO_TYPES } from '../../Configs/constants';
+import {getButtonColorForTodo} from "../../Configs/helper";
+import { DELETE_WORK, CHANGE_ACTIVE_ROW_INDEX, TOGGLE_DRAWER_DISPLAY } from '../../Context/reducer';
 
 const useStyles = makeStyles({
   root: {
@@ -33,18 +29,6 @@ const useStyles = makeStyles({
   },
 });
 
-// function createData(name, calories, fat, carbs, protein, teamNumber, taskNumber) {
-//   return { name, calories, fat, carbs, protein, teamNumber, taskNumber };
-// }
-
-// const rows = [
-//   createData('05.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Вибрация мотор", <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
-//   createData('06.10.2019', "00006", <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px' iconMargin="0 5px 0 -5px">{SettingsOutlinedIcon}</Icon>, "Течь трубы в задании - устранить", <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
-//   createData('07.10.2019', "00005", <Icon color="red" text='Просрочено' size="30px" iconMargin="0 5px 0 -5px">{AlarmIcon}</Icon>, "Течь трубы в задании - устранить", <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 2"),
-//   createData('08.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Течь трубы в задании - устранить", <CustomButton className="averageBtn" >Средний</CustomButton>, "Бригада Номер 2", "Задания Номер 1"),
-//   createData('09.10.2019', "00012", <GreenCheckbox label='Выполнено' />, "Течь трубы в задании - устранить", <CustomButton className="lowBtn" >Низкий</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
-// ];
-
 export default function SimpleTable() {
 
   const classes = useStyles();
@@ -54,31 +38,28 @@ export default function SimpleTable() {
   const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
   const [{ activeRowIndex }, dispatchAtiveRowIndex] = useStateValue();
   
-  // console.log('workList', workList);
-  
-
   const handleOnClick = (event) => {
-    dispatchAtiveRowIndex({type: 'changeActiveRowIndex', payload: Number(event.currentTarget.id)})
+    dispatchAtiveRowIndex({type: CHANGE_ACTIVE_ROW_INDEX, payload: Number(event.currentTarget.id)})
   }
 
   const handleOnDelete = (e) => {
     e.stopPropagation();
     const filteredItem = workList.filter((item, index) => index !== activeRowIndex)
     // console.log(filteredItem)
-    dispatchWorkList({type: 'deleteWork',  payload: filteredItem})
+    dispatchWorkList({type: DELETE_WORK,  payload: filteredItem})
   }
   
   const handleOnEdit = (e) => {
     e.stopPropagation();
-    dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: true})
+    dispatchDisplayDrawer({type: TOGGLE_DRAWER_DISPLAY, payload: true})
   }
 
   const renderTodoIcon = (type) => {
-    let configs = {}
+    let configs = { color : getButtonColorForTodo(type)}
     switch(type){
-      case TODO_TYPES.DONE : configs = { color: "#43a047", text: 'Выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <CheckBoxIcon/>}; break;
-      case TODO_TYPES.IN_PROGRESS : configs = { color: "rgb(234, 170, 96)", text: 'В Работе',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <SettingsOutlinedIcon />}; break;
-      case TODO_TYPES.NOT_FINISHED : configs = { color: "red", text: 'Не выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <AlarmIcon />}; break;
+      case TODO_TYPES.DONE : configs = {...configs, text: 'Выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <CheckBoxIcon/>}; break;
+      case TODO_TYPES.IN_PROGRESS : configs = {...configs, text: 'В Работе',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <SettingsOutlinedIcon />}; break;
+      case TODO_TYPES.NOT_FINISHED : configs = { ...configs, text: 'Не выполнено',  size: "30px", iconMargin: "0 5px 0 -5px", children: () => <AlarmIcon />}; break;
       default : configs = {}
     }
     return <Icon {...configs}/>
@@ -111,7 +92,6 @@ export default function SimpleTable() {
               {activeRowIndex === index && <TableCell align="left">
                           <FaRegEdit size="20px" color="rgb(67, 160, 71)" onClick={handleOnEdit}/>
                           <AiOutlineDelete size="22px" color="red" onClick={handleOnDelete}/>
-                          {/* <IoMdOpen/> */}
                   </TableCell>}
             </TableRow>
           ))}

@@ -1,22 +1,21 @@
 import React from 'react'
 import { TiThListOutline } from 'react-icons/ti';
-import TasksBody from './_TasksBody'
+import TaskBody from './_TaskBody'
 
 
-const index = () => {
+const Tasks = () => {
     return (
         <div className='tasks'>
             <div className='tasks-header'>
                 <span><TiThListOutline /></span>
                 <span>Задачи</span>
             </div>
-
-            <TasksBody title="Отключить оборудование"/>
-            <TasksBody title="Устранить неисправность"/>
-            <TasksBody title="Устранить неисправность"/>
-            <TasksBody title="Устранить неисправность"/>
+            <TaskBody title="Отключить оборудование"/>
+            <TaskBody title="Устранить неисправность"/>
+            <TaskBody title="Устранить неисправность"/>
+            <TaskBody title="Устранить неисправность"/>
         </div>
     )
 }
 
-export default index
+export default Tasks
