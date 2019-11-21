@@ -10,13 +10,13 @@ import Paper from '@material-ui/core/Paper';
 // import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 // import AlarmIcon from '@material-ui/icons/Alarm';
 
-
-
 // import Icon from '../../Core/Icon';
 // import CustomButton from '../../Core/Button';
 
 // import Button from '@material-ui/core/Button';
 import { useStateValue } from '../../State/index'
+import { FaEdit } from 'react-icons/fa';
+import { MdDelete } from 'react-icons/md';
 
 const useStyles = makeStyles({
   root: {
@@ -34,8 +34,6 @@ const useStyles = makeStyles({
 //   return { name, calories, fat, carbs, protein, teamNumber, taskNumber };
 // }
 
-
-
 // const rows = [
 //   createData('05.10.2019', "00007", <GreenCheckbox label='Выполнено' />, "Вибрация мотор", <CustomButton className='averageBtn' >Средний</CustomButton>, "Бригада Номер 1", "Задания Номер 1"),
 //   createData('06.10.2019', "00006", <Icon color="rgb(234, 170, 96)" text='в Работе' size='30px' iconMargin="0 5px 0 -5px">{SettingsOutlinedIcon}</Icon>, "Течь трубы в задании - устранить", <CustomButton className="higherBtn" >Высший</CustomButton>, 'Бригада Номер 2', "Задания Номер 2"),
@@ -46,19 +44,26 @@ const useStyles = makeStyles({
 
 export default function SimpleTable() {
 
-  const [{ workList }] = useStateValue();
-  // console.log('workList', workList);
+  const [{ workList }, dispatchWorkList ] = useStateValue();
+  // eslint-disable-next-line no-unused-vars
+  const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
+  const [{ activeRowIndex }, dispatchaAtiveRowIndex] = useStateValue();
 
   const classes = useStyles();
-
-  const [rowId, setRowId] = React.useState(undefined);
-
+  
   const handleOnClick = (event) => {
-    // console.log('event', event.currentTarget.id)
-    setRowId(+event.currentTarget.id)
+    dispatchaAtiveRowIndex({type: 'changeActiveRowIndex', payload: Number(event.currentTarget.id)})
   }
 
-
+  const handleOnDelete = () => {
+    const filteredItem = workList.filter((item, index) => index !== activeRowIndex)
+    dispatchWorkList({type: 'deleteWork',  payload: filteredItem})
+  }
+  
+  const handleOnEdit = () => {
+    dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: true})
+  }
+  
 
   return (
     <Paper className={classes.root}>
@@ -76,7 +81,7 @@ export default function SimpleTable() {
         </TableHead>
         <TableBody>
           {workList.map((row, index) => (
-            <TableRow key={index} id={index} onClick={handleOnClick} style={{backgroundColor: rowId === index ? 'gray' : '#fff'}}>
+            <TableRow key={index} id={index} onClick={handleOnClick} style={{backgroundColor: activeRowIndex === index ? 'gray' : '#fff'}}>
               <TableCell component="th" scope="row" className={classes.bodyCell}>{row.name}</TableCell>
               <TableCell align="left">{row.calories}</TableCell>
               <TableCell align="left">{row.fat}</TableCell>
@@ -84,6 +89,11 @@ export default function SimpleTable() {
               <TableCell align="left">{row.protein}</TableCell>
               <TableCell align="left">{row.teamNumber}</TableCell>
               <TableCell align="left">{row.taskNumber}</TableCell>
+              {activeRowIndex === index && <TableCell align="left">
+                          <FaEdit onClick={handleOnEdit}/>
+                          <MdDelete onClick={handleOnDelete}/>
+                          {/* <IoMdOpen/> */}
+                  </TableCell>}
             </TableRow>
           ))}
         </TableBody>

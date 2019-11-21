@@ -8,13 +8,20 @@ import Drawer from '@material-ui/core/Drawer';
 import EditWork from '../EditWork'
 import Tasks from '../Tasks';
 
+import { useStateValue } from '../../State/index';
+
+
 
 
 const Main = () => {
 
-    const [display, setDisplay] = React.useState(false);
+    // const [display, setDisplay] = React.useState(false);
 
-    const handleOnClose = (event) => setDisplay(event);
+    const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
+
+
+
+    const handleOnClose = () => dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: false});
 
     return (
         <div className='main'>
@@ -23,7 +30,7 @@ const Main = () => {
                 <AddingWork />
                 <DataFilter />
                 <DataTable />
-                <Drawer open={display} onClose={() => handleOnClose(false)} anchor="right">
+                <Drawer open={displayDrawer} onClose={handleOnClose} anchor="right">
                     <EditWork />
                     <Tasks />
                 </Drawer>

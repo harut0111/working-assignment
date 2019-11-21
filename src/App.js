@@ -29,6 +29,8 @@ function App() {
 
   const initialState = {
     workList: rows,
+    displayDrawer: false,
+    activeRowIndex: undefined,
   };
 
   const reducer = (state, action) => {
@@ -38,17 +40,17 @@ function App() {
               return Object.assign({}, state, {
                 workList: state.workList.concat(createData(...action.payload))
               })
-          case "CLEAN":
+          case "deleteWork":
               return Object.assign({}, state, {
-                  removedCard: null,
+                workList: action.payload,
               })
-          case "CHANGE_VIS": 
+          case "toggleDrawerDisplay": 
               return Object.assign({}, state, {
-                  isVisible: !state.isVisible,
+                displayDrawer: action.payload,
               })
-          case "CHANGE_SCREEN_MODE":
+          case "changeActiveRowIndex":
               return Object.assign({}, state, {
-                  activeMode: action.payload,
+                activeRowIndex: action.payload,
               })
           case "DATA_UPDATE":
               return Object.assign({}, state, {

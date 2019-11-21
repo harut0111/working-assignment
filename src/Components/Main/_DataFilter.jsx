@@ -14,7 +14,7 @@ const _DataFilter = () => {
             <div className='main-filter-content'>
             
                 <div><Icon>{FilterListIcon}</Icon>   <SimpleMenu list={["Дополнительные фильтры", "вариант 1", "вариант 2", "вариант 3"]}/></div>
-                <div><Icon text='Дополнительные фильтры' fontSize='12px' iconMargin="0 5px">{FilterListIcon}</Icon></div>
+                {/* <div><Icon text='Дополнительные фильтры' fontSize='12px' iconMargin="0 5px">{FilterListIcon}</Icon></div> */}
                 <div><Icon text='Ремонтные персонал' fontSize='12px' iconMargin="0 5px">{PersonIcon}</Icon></div>
                 <div><Icon text='Объекты обслуживание' fontSize='12px' iconMargin="0 5px">{HomeIcon}</Icon></div>
                 <div><Icon text='Дата и срок обслуживания' fontSize='12px' iconMargin="0 5px">{DateRangeIcon}</Icon></div>
