@@ -44,13 +44,15 @@ const useStyles = makeStyles({
 
 export default function SimpleTable() {
 
+  const classes = useStyles();
+
   const [{ workList }, dispatchWorkList ] = useStateValue();
   // eslint-disable-next-line no-unused-vars
   const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
   const [{ activeRowIndex }, dispatchaAtiveRowIndex] = useStateValue();
 
-  const classes = useStyles();
   
+
   const handleOnClick = (event) => {
     dispatchaAtiveRowIndex({type: 'changeActiveRowIndex', payload: Number(event.currentTarget.id)})
   }
@@ -62,6 +64,7 @@ export default function SimpleTable() {
   
   const handleOnEdit = () => {
     dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: true})
+    console.log('activeRowIndex', activeRowIndex);
   }
   
 
