@@ -6,11 +6,14 @@ import HomeIcon from '@material-ui/icons/Home';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import SortIcon from '@material-ui/icons/Sort';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import SimpleMenu from '../../Core/DropDown'
 
 const _DataFilter = () => {
     return (
         <div className='main-filter'>
             <div className='main-filter-content'>
+            
+                <div><Icon>{FilterListIcon}</Icon>   <SimpleMenu list={["Дополнительные фильтры", "вариант 1", "вариант 2", "вариант 3"]}/></div>
                 <div><Icon text='Дополнительные фильтры' fontSize='12px' iconMargin="0 5px">{FilterListIcon}</Icon></div>
                 <div><Icon text='Ремонтные персонал' fontSize='12px' iconMargin="0 5px">{PersonIcon}</Icon></div>
                 <div><Icon text='Объекты обслуживание' fontSize='12px' iconMargin="0 5px">{HomeIcon}</Icon></div>

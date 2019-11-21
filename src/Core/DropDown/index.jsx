@@ -3,23 +3,24 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-export default function SimpleMenu() {
+export default function SimpleMenu(props) {
     
   const [anchorEl, setAnchorEl] = React.useState(null);
-  
   const [index, setIndex] = React.useState(0);
+
+
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
+   
   };
 
   const handleClose = (index) => {
     setAnchorEl(null);
-    setIndex(index);
+    if(typeof(index) === 'number') setIndex(index);
   };
 
-  const list = ["Выполнено", "В работе", "Не выполнено"];
-  
+  const list = props.list ? props.list: [];
 
   return (
     <div>
@@ -33,9 +34,9 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => handleClose(0)}>Выполнено</MenuItem>
-        <MenuItem onClick={() => handleClose(1)}>В работе</MenuItem>
-        <MenuItem onClick={() => handleClose(2)}>Не выполнено</MenuItem>
+        {list.map((item, index) => (
+          <MenuItem key={index} onClick={() => handleClose(index)}>{item}</MenuItem>
+        ))}
       </Menu>
     </div>
   );

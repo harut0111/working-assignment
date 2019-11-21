@@ -18,6 +18,7 @@ const CustomCheckbox = withStyles({
 
 export default function CheckboxLabels(props) {
 
+  // eslint-disable-next-line
   const [checked, setChecked] = React.useState(true)
 
   return (
@@ -25,7 +26,7 @@ export default function CheckboxLabels(props) {
         <FormControlLabel
             control={
             <CustomCheckbox
-                checked={checked}
+                checked={true}
                 onChange={event => setChecked(event.target.checked)}
                 value="checkedG"
             />

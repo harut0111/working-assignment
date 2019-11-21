@@ -28,6 +28,7 @@ const index = () => {
 
             {/* part 2 */}
             <div className='editWork-image'>
+                {/* eslint-disable-next-line */}
                 <img  src="./Picture1.png" alt="Picture"/>
             </div>
 
@@ -45,9 +46,7 @@ const index = () => {
             
             {/* part 5 */}
             <div className='editWork-state'>
-                {/* <div><span>Выполнено</span><span><MdKeyboardArrowDown size="22px"/></span></div> */}
-                {/* <div></div> */}
-                <SimpleMenu />
+                <SimpleMenu list={["Выполнено", "В работе", "Не выполнено"]}/>
                 <div><span><MdAlarm /></span><span>Время 1ч  35м</span></div>
             </div>
 

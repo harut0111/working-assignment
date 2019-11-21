@@ -10,9 +10,11 @@ import Tasks from '../Tasks';
 
 
 
-const index = () => {
+const Main = () => {
 
-    // const [display, setDisplay] = useState(false);
+    const [display, setDisplay] = React.useState(false);
+
+    const handleOnClose = (event) => setDisplay(event);
 
     return (
         <div className='main'>
@@ -21,7 +23,7 @@ const index = () => {
                 <AddingWork />
                 <DataFilter />
                 <DataTable />
-                <Drawer open={false} onClose={() => console.log('close')} anchor="right">
+                <Drawer open={display} onClose={() => handleOnClose(false)} anchor="right">
                     <EditWork />
                     <Tasks />
                 </Drawer>
@@ -30,4 +32,4 @@ const index = () => {
     )
 }
 
-export default index;
+export default Main;
