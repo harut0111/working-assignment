@@ -15,8 +15,8 @@ import Paper from '@material-ui/core/Paper';
 
 // import Button from '@material-ui/core/Button';
 import { useStateValue } from '../../State/index'
-import { FaEdit } from 'react-icons/fa';
-import { MdDelete } from 'react-icons/md';
+import { FaRegEdit } from 'react-icons/fa';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const useStyles = makeStyles({
   root: {
@@ -49,24 +49,26 @@ export default function SimpleTable() {
   const [{ workList }, dispatchWorkList ] = useStateValue();
   // eslint-disable-next-line no-unused-vars
   const [{ displayDrawer }, dispatchDisplayDrawer] = useStateValue();
-  const [{ activeRowIndex }, dispatchaAtiveRowIndex] = useStateValue();
-
+  const [{ activeRowIndex }, dispatchAtiveRowIndex] = useStateValue();
+  
+  // console.log('workList', workList);
   
 
   const handleOnClick = (event) => {
-    dispatchaAtiveRowIndex({type: 'changeActiveRowIndex', payload: Number(event.currentTarget.id)})
+    dispatchAtiveRowIndex({type: 'changeActiveRowIndex', payload: Number(event.currentTarget.id)})
   }
 
-  const handleOnDelete = () => {
+  const handleOnDelete = (e) => {
+    e.stopPropagation();
     const filteredItem = workList.filter((item, index) => index !== activeRowIndex)
     dispatchWorkList({type: 'deleteWork',  payload: filteredItem})
   }
   
-  const handleOnEdit = () => {
+  const handleOnEdit = (e) => {
+    e.stopPropagation();
     dispatchDisplayDrawer({type: 'toggleDrawerDisplay', payload: true})
-    console.log('activeRowIndex', activeRowIndex);
+    // console.log('activeRowIndex', activeRowIndex);
   }
-  
 
   return (
     <Paper className={classes.root}>
@@ -84,7 +86,7 @@ export default function SimpleTable() {
         </TableHead>
         <TableBody>
           {workList.map((row, index) => (
-            <TableRow key={index} id={index} onClick={handleOnClick} style={{backgroundColor: activeRowIndex === index ? 'gray' : '#fff'}}>
+            <TableRow key={index} id={index} onClick={handleOnClick} style={{boxShadow: activeRowIndex === index ? '0 0 10px silver' : 'none'}}>
               <TableCell component="th" scope="row" className={classes.bodyCell}>{row.name}</TableCell>
               <TableCell align="left">{row.calories}</TableCell>
               <TableCell align="left">{row.fat}</TableCell>
@@ -93,8 +95,8 @@ export default function SimpleTable() {
               <TableCell align="left">{row.teamNumber}</TableCell>
               <TableCell align="left">{row.taskNumber}</TableCell>
               {activeRowIndex === index && <TableCell align="left">
-                          <FaEdit onClick={handleOnEdit}/>
-                          <MdDelete onClick={handleOnDelete}/>
+                          <FaRegEdit size="20px" color="rgb(67, 160, 71)" onClick={handleOnEdit}/>
+                          <AiOutlineDelete size="22px" color="red" onClick={handleOnDelete}/>
                           {/* <IoMdOpen/> */}
                   </TableCell>}
             </TableRow>
