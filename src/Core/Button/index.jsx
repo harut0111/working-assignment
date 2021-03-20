@@ -1,26 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import PropTypes from "prop-types";
+import Button from "@material-ui/core/Button";
 // import { makeStyles } from '@material-ui/core/styles';
 
-
-
-
-
-import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core/styles";
 
 // We can inject some CSS into the DOM.
 const styles = {
   root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: "white",
     height: 30,
-    padding: '0 20px',
+    padding: "0 20px",
     minWidth: 112,
-    boxShadow: '0 3px 5px 2px rgba(0, 0, 0, 0.1)',
+    boxShadow: "0 3px 5px 2px rgba(0, 0, 0, 0.1)",
   },
 };
 
@@ -29,7 +25,7 @@ function ClassNames(props) {
 
   return (
     <Button className={clsx(classes.root, className)} {...other}>
-      {children || 'class names'}
+      {children || "class names"}
     </Button>
   );
 }
@@ -41,7 +37,6 @@ ClassNames.propTypes = {
 };
 
 export default withStyles(styles)(ClassNames);
-
 
 // const useStyles = makeStyles(theme => ({
 //     button: {
@@ -55,13 +50,9 @@ export default withStyles(styles)(ClassNames);
 
 // const ButtonWrapper = props => {
 
-    
 //     const classes = useStyles();
 
 //     const { color, children } = props;
-
-
-
 
 //     return (
 //         <div>
@@ -80,6 +71,5 @@ export default withStyles(styles)(ClassNames);
 
 //     })
 // };
-
 
 // export default ButtonWrapper;

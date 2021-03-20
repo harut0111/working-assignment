@@ -1,85 +1,83 @@
 .leftMenu {
-    position: relative;
-    z-index: 1;
-    width: 250px;
-    min-width: 250px;
-    background: rgb(79, 79, 79);
-    color: #fff;
-    height: 100%;
-    overflow-x: auto;
+  position: relative;
+  z-index: 1;
+  width: 250px;
+  min-width: 250px;
+  background: rgb(79, 79, 79);
+  color: #fff;
+  height: 100%;
+  overflow-x: auto;
 
-    &::-webkit-scrollbar {
-        width: 0.4em;
+  &::-webkit-scrollbar {
+    width: 0.4em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: gray;
     }
-     
-    &::-webkit-scrollbar-thumb {
-      background-color: darkgrey;
-      outline: 1px solid slategrey;
-      border-radius: 10px;
+  }
 
-      &:hover {
-          background-color: gray;
+  &-content {
+    margin: 5px 10px;
+    height: -webkit-fill-available;
+    &-main {
+      margin: 50px 0;
+      ul {
+        margin: 40px 0;
+        li {
+          display: flex;
+          align-items: center;
+          margin: 5px 0;
+          text-align: center;
+          cursor: pointer;
+
+          &:hover {
+            background: gray;
+          }
+
+          .menuIcon {
+            margin: 0 10px 0 3px;
+          }
+        }
       }
     }
-
-
-
-    &-content {
-        margin: 5px 10px;
-        height: -webkit-fill-available;
-        &-main {
-            margin: 50px 0;
-            ul {
-                margin: 40px 0;
-                li {
-                    display: flex;
-                    align-items: center;
-                    margin: 5px 0;
-                    text-align: center;
-                    cursor: pointer;
-
-                    &:hover {
-                        background: gray;
-                    }
-
-                    .menuIcon {
-                        margin: 0 10px 0 3px;
-                    }
-                }
-            }
-        }
+  }
+  &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // border: $testBorder;
+    border-bottom: 1px solid silver;
+    height: 60px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    span {
+      color: tomato;
     }
-    &-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        // border: $testBorder;
-        border-bottom: 1px solid silver;
-        height: 60px;
-        font-size: 1.3rem;
-        font-weight: 900;
-        span {
-            color: tomato;
-        }
-    }
+  }
 
-    &-footer {
-        position: relative;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-        top: 100px;
-        height: 70px;
-        > div {
-            color: orange;
-            margin: 0 5px;
-            cursor: pointer;
-            padding: 10px;
+  &-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    top: 100px;
+    height: 70px;
+    > div {
+      color: orange;
+      margin: 0 5px;
+      cursor: pointer;
+      padding: 10px;
 
-            &:hover {
-                background-color: rgba(128, 128, 128, 0.3);
-            }
-        }
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.3);
+      }
     }
+  }
 }

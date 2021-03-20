@@ -8,7 +8,6 @@ export const TODO_TYPES = {
     NOT_FINISHED: "Не выполнено"
 };
 
-
 export const INITIAL_TODOS =  [
     createTodoData('06.10.2019', "00006",  TODO_TYPES.DONE, "Течь трубы в задании - устранить", <Button className="higherBtn" >Высший</Button>,'Бригада Номер 2', "Задания Номер 2"),
     createTodoData('06.10.2019', "00006",  TODO_TYPES.IN_PROGRESS, "Течь трубы в задании - устранить", <Button className="averageBtn" >Средний</Button>,'Бригада Номер 2', "Задания Номер 2"),
